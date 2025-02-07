@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+  
+  </head>
+  <body>
+    <section class="container">
+      <h2 class="self-center text-4xl font-semibold text-center text-zinc-800 mb-12">
+        Get in touch with us.
+        <br />
+        We're here to assist you.
+      </h2>
+
+
+      <form action="#" class="form" id="contact-form" method="post" onsubmit="sendEmail() ; reset(); return false">
+        <i class="fas fa-paper-plane"></i>
+        <div class="input-box">
+          <label>Full Name <span style="color: red;">*</span></label>
+          <input type="text"  placeholder="Enter full name" id='contact-name' onkeyup="validateName()" required />
+          <span id="name-error" class="text-red-500"></span>
+        </div>
+        <div class="input-box">
+          <label>Email Address <span style="color: red;">*</span></label>
+          <input type="email" id="email" placeholder="Enter email address"  onkeyup="validateEmail()" required />
+          <span id="email-error" class="text-red-500"></span>
+        </div>
+        <div class="column">
+          <div class="input-box">
+            <label>Phone Number<span style="color: red;">*</span></label>
+            <input type="tel" id="phone-number" placeholder="Enter phone number"  onkeyup="validatePhone()" required />
+            <span id="phone-error" class="text-red-500"></span>
+          </div>
+          <div class="input-box">
+            <label>Date of Birth </label>
+            <input type="date" id="birth-date" placeholder="Enter birth date"  />
+            <span id="date-error" class="text-red-500"></span>
+          </div>
+        </div>
+        <div class="gender-box">
+          <h3>Gender <span style="color: red;">*</span></h3>
+          <div class="gender-option">
+            <div class="gender">
+              <input type="radio" id="check-male" name="gender"/>
+              <label for="check-male">male</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-female" name="gender" />
+              <label for="check-female">Female</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-other" name="gender" />
+              <label for="check-other">prefer not to say</label>
+            </div>
+            <span id="gender-error" class="text-red-500"></span>
+          </div>
+        </div>
+        <div class="input-box address">
+          <label>Address <span style="color: red;">*</span></label>
+          <input type="text" id="street-address" placeholder="Enter street address" required />
+          <input type="text" id="street-address-2" placeholder="Enter street address line 2" />
+          <div class="column">
+            <div class="select-box">
+              <select id="country"  onkeyup="validateCountry()" required>
+                <option hidden>Country</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="Canada">Canada</option>
+                <option value="UK">UK</option>
+                
+              </select>
+              <span id="countryError" class="text-red-500"></span>
+            </div>
+            <input type="text" id="city" placeholder="Enter your city" onkeyup="validateCity()"  required />
+            <span id="city-error" class="text-red-500"></span>
+          </div>
+          <div class="input-box">
+            <label>Message</label>
+            <br />
+            <textarea id="message" placeholder="Enter your message" 
+                      rows="4" 
+                      class="w-full p-2 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-red-300"
+                      required></textarea>
+            <span id="message-error" class="text-red-500"></span>
+        </div>
+        
+        </div>
+        <button  type="submit" id="submit-button">Submit Information</button>
+        <div id="submit-error" class="text-red-500"></div>
+      </form>
+      
+    </section>
+    <script>
+      function sendEmail()
+      {
+        mail.send({
+    Host : "smtp.gmail.com",
+    Username : "avartan2k24@gmail.com",
+    Password : "",
+    To : 'souviksural22@gmail.com',
+    From : "document.getElementById('email').value",
+    Subject : "New contact form enquiry",
+    Body : "Name: "+document.getElementById('contact-name').value + "<br> Email: "+document.getElementById('email').value + "<br> Phone: "+document.getElementById('phone-number').value + "<br> Date of Birth: "+document.getElementById('birth-date').value + "<br> Country: "+document.getElementById('country').value+ "<br> City: "+document.getElementById('city').value+ "<br> Message: "+document.getElementById('message').value
+    
+  
+}).then(
+  message => alert("Message has been sent successfully!")
+);
+      }
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
