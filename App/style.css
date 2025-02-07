@@ -1,4 +1,6 @@
 /* Import Google font - Poppins */
+
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
   margin: 0;
@@ -130,4 +132,10 @@ body {
 
 #message:focus {
   border-color: green; /* Change border color on focus */
+}
+#submit-error {
+  font-size: 1.5rem; /* Increase font size */
+  text-align: center; /* Center the text */
+  color: #FABF62; /* Change text color to green for success message */
+  margin-top: 20px; /* Add some space above the message */
 }

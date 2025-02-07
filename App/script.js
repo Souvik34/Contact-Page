@@ -111,5 +111,5 @@ function validateForm(event) {
     }
   }
   
-  // Event Listeners
+  
   document.getElementById('submit-button').addEventListener('click', validateForm);
