@@ -36,3 +36,14 @@ Email.send({
 }).then(
   message => alert("Mail sent successfully")
 );
+```
+
+4. Form Submission: Once the form is filled correctly, clicking the submit button will send the details via email.
+
+## Customization
+
+- **Styling**: Modify Tailwind classes in index.html for different styles.
+- **Validation Rules**: Adjust validation logic in script.js as per your requirements.
+- **SMTP Configuration**: Update SMTP settings to use your preferred email service provider.
+
+
